@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip Booking Form</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 1rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 560px;
+    }
+
+    h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #111;
+      margin: 0 0 1.5rem;
+      line-height: 1.4;
+    }
+
+    label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #444;
+      margin-bottom: 0.5rem;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 160px;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      color: #111;
+      resize: vertical;
+      transition: border-color 0.15s;
+      outline: none;
+    }
+
+    textarea:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+    button[type="submit"] {
+      margin-top: 1.25rem;
+      width: 100%;
+      padding: 0.75rem 1.5rem;
+      background: #2563eb;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    button[type="submit"]:hover {
+      background: #1d4ed8;
+    }
+
+    button[type="submit"]:active {
+      background: #1e40af;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>What have you already booked and where?</h1>
+    <form
+      action="https://www.formbackend.com/f/fe63ec1b83df9e68"
+      method="POST"
+    >
+      <input type="hidden" id="trip_id" name="trip_id" value="">
+
+      <label for="bookings">Your answer</label>
+      <textarea
+        id="bookings"
+        name="bookings"
+        placeholder="e.g. Flights to Tokyo on 12 June, hotel in Kyoto for 3 nights..."
+        required
+      ></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const tripId = params.get('trip_id') || '';
+    document.getElementById('trip_id').value = tripId;
+  </script>
+</body>
+</html>
