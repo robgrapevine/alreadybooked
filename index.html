@@ -100,7 +100,7 @@
     }
 
     #why_not_us {
-      min-height: 155px;
+      min-height: 80px;
     }
 
     button[type="submit"] {
@@ -167,7 +167,20 @@
         <textarea
           id="why_not_us"
           name="why_not_us"
-          placeholder="e.g. I got a conference rate, couldn't find what I was looking for etc&#10;&#10;Any feedback you want to provide so we can improve our service next time?"
+          placeholder="e.g. I got a conference rate, couldn't find what I was looking for etc"
+          required
+        ></textarea>
+      </div>
+
+      <!-- Question 4: Free text, optional -->
+      <div class="field">
+        <label for="email_feedback">
+          Can we improve these emails in any way?
+          <span class="optional">(optional)</span>
+        </label>
+        <textarea
+          id="email_feedback"
+          name="email_feedback"
         ></textarea>
       </div>
 
