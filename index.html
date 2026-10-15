@@ -131,6 +131,7 @@
       method="POST"
     >
       <input type="hidden" id="trip_id" name="trip_id" value="">
+      <input type="hidden" id="tmc_name" name="tmc_name" value="">
 
       <!-- Question 1: Dropdown -->
       <div class="field">
@@ -185,6 +186,8 @@
     const params = new URLSearchParams(window.location.search);
     const tripId = params.get('trip_id') || '';
     document.getElementById('trip_id').value = tripId;
+    const tmcName = params.get('tmc_name') || '';
+    document.getElementById('tmc_name').value = tmcName;
   </script>
 </body>
 </html>
